@@ -1,5 +1,6 @@
 package main;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Song {
@@ -13,7 +14,22 @@ public class Song {
         return song.get(i);
     }
 
-    public static String getVerseRange(){
-        return "";
+    public static String getVerseRange(int a, int b){
+        if(a > b)
+            throw new ArrayIndexOutOfBoundsException();
+        if(a < 0 || b < 0)
+            throw new ArrayIndexOutOfBoundsException();
+        if(a > 12 || b > 12)
+            throw new ArrayIndexOutOfBoundsException();
+
+        ArrayList<String> song = FileHelper.readFromFile("song.txt");
+        StringBuilder sb = new StringBuilder();
+        for(int i = a; i <= b; ++i) {
+            sb.append(song.get(i));
+            if(i != b)
+                sb.append("\n");
+
+        }
+        return sb.toString();
     }
 }

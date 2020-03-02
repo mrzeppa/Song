@@ -42,22 +42,22 @@ public class SongTest {
         String result =
                 "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.\n" +
                 "On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.";
-        assertEquals(result, Song.getVerseRange());
+        assertEquals(result, Song.getVerseRange(0, 1));
     }
 
     @Test
     public void zeroRangeTest(){
-        assertEquals("On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.", Song.getVerseRange());
+        assertEquals("On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.", Song.getVerseRange(0, 0));
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void outOfRangeTest(){
-        Song.getVerseRange();
+        Song.getVerseRange(23, 540);
     }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void firstRangeGreaterThanSecond(){
-        Song.getVerseRange();
+        Song.getVerseRange(500, 1);
     }
 
     @Test
@@ -74,7 +74,7 @@ public class SongTest {
                 "On the tenth day of Christmas my true love gave to me: ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
                 "On the eleventh day of Christmas my true love gave to me: eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n" +
                 "On the twelfth day of Christmas my true love gave to me: twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.";
-        assertEquals(result, Song.getVerseRange());
+        assertEquals(result, Song.getVerseRange(0, 11));
 
     }
 
