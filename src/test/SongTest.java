@@ -45,7 +45,10 @@ public class SongTest {
         assertEquals(result, Song.getVerseRange());
     }
 
-
+    @Test
+    public void zeroRangeTest(){
+        assertEquals("On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.", Song.getVerseRange());
+    }
 
 
 }
