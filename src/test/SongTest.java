@@ -55,4 +55,9 @@ public class SongTest {
         Song.getVerseRange();
     }
 
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void firstRangeGreaterThanSecond(){
+        Song.getVerseRange();
+    }
+
 }
