@@ -27,4 +27,10 @@ public class SongTest {
         assertNotEquals("", Song.getVerse(1));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void negativeArgumentShouldRaiseException() {
+        Song.getVerse(-1);
+    }
+
+
 }
