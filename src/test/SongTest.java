@@ -50,5 +50,9 @@ public class SongTest {
         assertEquals("On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.", Song.getVerseRange());
     }
 
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void outOfRangeTest(){
+        Song.getVerseRange();
+    }
 
 }
