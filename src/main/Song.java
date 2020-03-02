@@ -33,8 +33,6 @@ public class Song {
         return sb.toString();
     }
 
-
-
     public static String getSong(){
         ArrayList<String> song = FileHelper.readFromFile("song.txt");
         StringBuilder sb = new StringBuilder();

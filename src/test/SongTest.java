@@ -94,4 +94,19 @@ public class SongTest {
         assertEquals(result, Song.getSong());
     }
 
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void getSongWithBRangeOutOfBounds(){
+        Song.getVerseRange(0, 13);
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void getSongWithAAndBRangeOutOfBounds(){
+        Song.getVerseRange(13, 13);
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void getSongWithNegativeRange(){
+        Song.getVerseRange(-26, -13);
+    }
+
 }
