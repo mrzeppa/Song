@@ -34,7 +34,17 @@ public class Song {
     }
 
 
+
     public static String getSong(){
-        return "";
+        ArrayList<String> song = FileHelper.readFromFile("song.txt");
+        StringBuilder sb = new StringBuilder();
+        int i = 0;
+        for (String s : song) {
+            sb.append(s);
+            if(i != song.size() - 1)
+                sb.append("\n");
+            i++;
+        }
+        return sb.toString();
     }
 }
