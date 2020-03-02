@@ -17,4 +17,14 @@ public class SongTest {
         assertEquals("On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.", Song.getVerse(2));
     }
 
+    @Test
+    public void methodWithGiven_5ShouldReturnFifthVerse(){
+        assertEquals("On the fifth day of Christmas my true love gave to me: five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.", Song.getVerse(5));
+    }
+
+    @Test
+    public void methodWithGivenNumberOfVerseShouldNotReturnEmptyString(){
+        assertNotEquals("", Song.getVerse(1));
+    }
+
 }
