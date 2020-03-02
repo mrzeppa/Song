@@ -32,4 +32,9 @@ public class Song {
         }
         return sb.toString();
     }
+
+
+    public static String getSong(){
+        return "";
+    }
 }
