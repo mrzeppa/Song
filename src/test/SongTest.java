@@ -37,5 +37,15 @@ public class SongTest {
         Song.getVerse(5000);
     }
 
+    @Test
+    public void methodWithGivenRangeShouldReturnRangeInThatRange(){
+        String result =
+                "On the first day of Christmas my true love gave to me: a Partridge in a Pear Tree.\n" +
+                "On the second day of Christmas my true love gave to me: two Turtle Doves, and a Partridge in a Pear Tree.";
+        assertEquals(result, Song.getVerseRange());
+    }
+
+
+
 
 }
