@@ -1,12 +1,15 @@
 package main;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class Song {
     public static String getVerse(int i) {
-        String result = null;
+        i -= 1;
+        if(i < 0) {
+            throw new IllegalArgumentException();
+        }
+        ArrayList<String> song = FileHelper.readFromFile("song.txt");
 
-        return result;
+        return song.get(i);
     }
 }
