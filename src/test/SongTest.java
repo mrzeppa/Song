@@ -27,9 +27,14 @@ public class SongTest {
         assertNotEquals("", Song.getVerse(1));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void negativeArgumentShouldRaiseException() {
         Song.getVerse(-1);
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void argumentOutOfRangeShouldRaiseAnException(){
+        Song.getVerse(5000);
     }
 
 
